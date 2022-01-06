@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись</title>
+    {% include 'main/nav.html' %}
+    {% include 'main/add.html' %}
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+    <form method="post">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        {% csrf_token %}
+        <button onclick="window.location.href = '{{ pay_link }}';" type="button" class="w-100 btn btn-lg btn-primary">Оплатить</button>
+        <div class="mb-3">
+          <label for="id_email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" required id="id_email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="id_phone" class="form-label">Телефон</label>
+          <input type="text" name="phone" required id="id_phone" class="form-control" placeholder="+7XXXXXXXXXX">
+        </div>
+        <div class="mb-3">
+         <label for="id_time" class="form-label">Доступные окна</label>
+          <select class="form-control" name="time" id="id_time">
+          {% for item in tickets %}
+            <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="payment_id" class="form-label">Код из платежа</label>
+          <input type="text" name="payment_id" required id="payment_id" class="form-control">
+        </div>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <button class="btn btn-primary" type="submit">Button</button>
+        </div>
+    </div>
+    </form>
+    {% comment %}
+
+    <br>
+    <br>
+    <br>
+    <div class="mb-3">
+        <form method="post">
+        {% csrf_token %}
+        <p class="phone_field"><th><label for="id_phone" class="form-label">Телефон:</label> </th><td><input type="text" name="phone" required id="id_phon1e"></td></p>
+        <p class="email_field"><th><label for="id_email" class="form-label">Email:</label> </th><td><input type="email" name="email" required id="id_emai1l"></td></p>
+        <p class="time_field"><th><label for="id_time" class="form-label">Время:</label> </th><td><select name="time" id="id_ti1me">
+          <option value="0">--------</option>
+            {% for item in tickets %}
+            <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+        </select></td></p>
+        <button id="button_field" type="submit" class="btn btn-primary btn-block">Далее</button>
+        </form>
+    </div>
+            {% endcomment %}
+    <br>
+    {% comment %}
+    <form method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+        <input type="hidden" name="receiver" value="4100116993572215">
+        <input type="hidden" name="formcomment" value="Проверка">
+        <input type="hidden" name="short-dest" value="Проверка">
+        <input type="hidden" name="label" value="$order_id">
+        <input type="hidden" name="quickpay-form" value="donate">
+        <input type="hidden" name="targets" value="транзакция {order_id}">
+        <input type="hidden" name="sum" value="500.00" data-type="number">
+        <input type="hidden" name="comment" value="Хотелось бы получить дистанционное управление.">
+        <input type="hidden" name="need-fio" value="false">
+        <input type="hidden" name="need-email" value="false">
+        <input type="hidden" name="need-phone" value="false">
+        <input type="hidden" name="need-address" value="false">
+        <input type="submit" value="Перевести">
+    </form>
+{% endcomment %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

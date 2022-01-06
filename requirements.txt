@@ -1,0 +1,3 @@
+django
+yoomoney
+uuid

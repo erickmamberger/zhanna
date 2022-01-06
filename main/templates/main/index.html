@@ -1,0 +1,202 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мамбергер</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    
+<header>
+  {% include 'main/nav.html' %}
+  {% include 'main/add.html' %}
+</header>
+
+<main>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Арбитраж.</h1>
+            <p>Споры между хозяйствующими субъектами. Банкроство юридических и физических лиц. Регистрация ИП с открытием р/c.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Гражданское право.</h1>
+            <p><h3>Наследство. Раздел имущества супругов. Взыскание долгов и многое другое.</h3></p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_2.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Уголовное право.</h1>
+            <p><h2>Защита на предварительном следствии и в суде. Предстваление интересов потерпевших по уголовным делам</h2></p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_2.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>NEW CARUSEL.</h1>
+              <p><h2>Защита на предварительном следствии и в суде. Предстваление интересов потерпевших по уголовным делам</h2></p>
+              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+        <h3>Разовое поручение</h3>
+        <p>Устная консультация, разработка правовых документов (заявления, жалобы, договоры). От 1000 рублей.</p>
+        {% comment %}
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        {% endcomment %}
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_2.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+        <h3>Соглашение на ведение дела</h3>
+        <p>От 10000 рублей.</p>
+        {% comment %}
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        {% endcomment %}      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+        <h3>Абонентское обслуживание</h3>
+        <p>Сопровождение деятельности юридического лица.</p>
+        {% comment %}
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        {% endcomment %}      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">О себе:{% comment %}<span class="text-muted">It’ll blow your mind.</span>{% endcomment %}</h2><br>
+        <p class="lead">В 1996 году закончила Пермский Государственный Университет, специальность - юриспруденция.<br>
+          20 мая 1997 года присвоен статус адвоката и внесена запись в реестр адвокатов Пермского края 59/165.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">{% comment %}<span class="text-muted">See for yourself.</span>{% endcomment %}</h2>
+        <p class="lead">- Надежность и качество.<br>- Индивидуальный подход.<br>- Конфиденциальность.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/zhanna.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{% comment %}<span class="text-muted">Checkmate.</span>{% endcomment %}</h2>
+        <p class="lead">Возможность провидения онлайн-консультаций, офис в центре города и различные варианты сотрудничества.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>Стоимость услуг может меняться. По вопросам обращайтесь лично к адвокату.{% comment %} &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>{% endcomment %}</p>
+  </footer>
+</main>
+
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+      
+  </body>
+</html>
