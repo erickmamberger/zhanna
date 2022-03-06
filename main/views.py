@@ -1,20 +1,11 @@
+from datetime import datetime
+
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
-from main.service import get_actual_tickets, mailing, test_mail
+from main.service import mailing
 from main.models import Tickets
-from main.service import get_pay_link, check_payment
 from django.views.generic import TemplateView
-
-
-def test(request):
-    test_mail()
-    return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets()})
-
-
-def history(request):
-    check_payment(1)
-    return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets()})
 
 
 class CoreView(TemplateView):
@@ -25,23 +16,13 @@ class ContactsView(TemplateView):
     template_name = 'main/contacts.html'
 
 
-class PayView(TemplateView):
-    template_name = 'main/pay.html'
-    # extra_context = {"pay_link": get_pay_link()}
-
-
 class GetTicketView(TemplateView):
     template_name = 'main/get_ticket.html'
 
     def get(self, request):
-        pay_link = get_pay_link()
-        if pay_link == 0:
-            messages.info(request, 'Пожалуйста, для записи позвоните нам по номеру +7 (902) 471 71 34.\n'
-                                   'Или напишите через эл. почту или соц. сети.')
-            return redirect('home')
-        else:
-            return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets(),
-                                                            "pay_link": pay_link})
+        queryset = Tickets.objects.filter(is_published=True, time__gte=datetime.now())
+        return render(request, 'main/get_ticket.html', {"tickets": queryset})
+
 
     # добавить валидацию. в целом все ок. предусмотреть все возможные исключения
     def post(self, request):
@@ -49,13 +30,8 @@ class GetTicketView(TemplateView):
             target_ticket = Tickets.objects.get(str_date=request.POST['time'], is_published=True)
         except:
             messages.error(request, 'Занять слот или нужно проверить правильность введенной формы')
-            return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets()})
-
-        if check_payment(request.POST['payment_id']):
-            pass
-        else:
-            messages.error(request, 'Неверный код оплаты или оплата не была проведена.')
-            return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets()})
+            queryset = Tickets.objects.filter(is_published=True, time__gte=datetime.now())
+            return render(request, 'main/get_ticket.html', {"tickets": queryset})
 
         target_ticket.is_published = False
         target_ticket.save()
@@ -67,3 +43,5 @@ class GetTicketView(TemplateView):
         return redirect('home')
 
 
+class QrView(TemplateView):
+    template_name = 'main/qr.html'

@@ -14,12 +14,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}"><h5 class="dope">Контакты</h5></a>
           </li>
-          {% comment %}
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'qr' %}"><h5 class="dope">Оплата</h5></a>
           </li>
         </ul>
-
+        {% comment %}
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
