@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import CoreView, ContactsView, PayView, GetTicketView, history  # , test  # , pay_check
+from main.views import CoreView, ContactsView, PayView, GetTicketView, history, test  # , test  # , pay_check
 
 urlpatterns = [
     path('', CoreView.as_view(), name='home'),
@@ -7,6 +7,7 @@ urlpatterns = [
     path('contacts/', ContactsView.as_view(), name='contacts'),
     path('payment/', PayView.as_view(), name='pay'),
     path('check/', history),
+    path('1234', test),
     # path('payment/<str:id>/', pay_check, name='pay_check'),
 
 ]

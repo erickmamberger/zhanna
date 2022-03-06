@@ -1,10 +1,15 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
-from main.service import get_actual_tickets, mailing
+from main.service import get_actual_tickets, mailing, test_mail
 from main.models import Tickets
 from main.service import get_pay_link, check_payment
 from django.views.generic import TemplateView
+
+
+def test(request):
+    test_mail()
+    return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets()})
 
 
 def history(request):
@@ -29,8 +34,14 @@ class GetTicketView(TemplateView):
     template_name = 'main/get_ticket.html'
 
     def get(self, request):
-        return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets(),
-                                                        "pay_link": get_pay_link()})
+        pay_link = get_pay_link()
+        if pay_link == 0:
+            messages.info(request, 'Пожалуйста, для записи позвоните нам по номеру +7 (902) 471 71 34.\n'
+                                   'Или напишите через эл. почту или соц. сети.')
+            return redirect('home')
+        else:
+            return render(request, 'main/get_ticket.html', {"tickets": get_actual_tickets(),
+                                                            "pay_link": pay_link})
 
     # добавить валидацию. в целом все ок. предусмотреть все возможные исключения
     def post(self, request):

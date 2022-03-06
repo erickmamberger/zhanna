@@ -1,0 +1,35 @@
+{% load static %}
+.nav-item{
+ margin-top: 8px;
+}
+
+.navbar-brand{
+ margin-top: 7px;
+}
+
+.phone_number {
+ margin-top: 7px;
+ margin-right: 20px;
+ color: white;
+}
+
+.social_icon {
+ margin-left: 10px;
+}
+
+.dope:hover {
+ color: #707070;
+}
+
+.my_div {
+  width: 40%;
+  height: 40%;
+  margin: 30px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ccc;
+}

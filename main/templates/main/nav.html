@@ -1,16 +1,18 @@
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+{% load static %}
+<link href="{% static 'css/my.css' %}" rel="stylesheet">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Мамбергер</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><h5>Адвокат Мамбергер</h5></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'pay' %}">Запись</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'get_ticket' %}"><h5 class="dope">Запись</h5></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}">Контакты</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}"><h5 class="dope">Контакты</h5></a>
           </li>
           {% comment %}
           <li class="nav-item">
@@ -24,5 +26,20 @@
         </form>
         {% endcomment %}
       </div>
+      <div class="phone_number">
+        <h5>+7 (902) 471 71 34</h5>
+      </div>
+      <a href="#" class="social_icon">
+        <img src="{% static 'img/_vk.png' %}" width="33" height="33" alt="">
+      </a>
+      <a href="#" class="social_icon">
+        <img src="{% static 'img/_instagram.png' %}" width="33" height="33" alt="">
+      </a>
+      <a href="#" class="social_icon">
+        <img src="{% static 'img/_viber.png' %}" width="33" height="33" alt="">
+      </a>
+      <a href="#" class="social_icon">
+        <img src="{% static 'img/_whatsapp.png' %}" width="33" height="33" alt="">
+      </a>
     </div>
   </nav>

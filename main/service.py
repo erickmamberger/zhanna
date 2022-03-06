@@ -9,18 +9,21 @@ from main.models import Tickets
 def get_pay_link():
     uniq = str(uuid.uuid4().int)
     uniq = uniq[:6]
-    quickpay = Quickpay(
-                receiver="4100116993572215",
-                quickpay_form="shop",
-                targets="Пожалуйста, сохраните номер вашего платежа перед оплатой:"
-                        f"\n{uniq}",
-                paymentType="SB",
-                successURL='http://127.0.0.1:8000/tickets/',
-                sum=3,
-                label=uniq,
-            )
-    pay_link = quickpay.redirected_url
-    print(pay_link)
+    try:
+        quickpay = Quickpay(
+                    receiver="4100116993572215",
+                    quickpay_form="shop",
+                    targets="Пожалуйста, сохраните номер вашего платежа:"
+                            f"\n{uniq}",
+                    paymentType="SB",
+                    successURL='https://advokat-mamberger.ru/tickets/',
+                    sum=3,
+                    label=uniq,
+                )
+        pay_link = quickpay.redirected_url
+    except Exception as ex:
+        pay_link = 0
+    #print(pay_link)
     return pay_link
 
 
@@ -68,3 +71,17 @@ def mailing(time, target_email, target_phone):
 
     send_mail(f'Новый клиент {time}', f'Время: {time}\nКонтакты: {target_email}, {target_phone}\n\n{text}',
                 'erickmambergermail@yandex.ru', [f'mamberger.zhanna@yandex.ru'], fail_silently=False,)
+
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
+
+def test_mail():
+    subject = 'Subject'
+    html_message = render_to_string('main/index.html', {'context': 'values'})
+    plain_message = strip_tags(html_message)
+    from_email = 'erickmambergermail@yandex.ru'
+    to = 'erickmambergermail@gmail.com'
+
+    mail.send_mail(subject, plain_message, from_email, [to], html_message=html_message)
