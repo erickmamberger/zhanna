@@ -23,7 +23,6 @@ class GetTicketView(TemplateView):
         queryset = Tickets.objects.filter(is_published=True, time__gte=datetime.now())
         return render(request, 'main/get_ticket.html', {"tickets": queryset})
 
-
     # добавить валидацию. в целом все ок. предусмотреть все возможные исключения
     def post(self, request):
         try:

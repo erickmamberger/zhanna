@@ -10,9 +10,14 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <style>
+      .map-box {
+        width: 45%;
+        margin-left: 29%;
+        margin-top: 15px;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -72,7 +77,9 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3ee2a5105fa25d6e0601cf8a4eea8c6309478b09286c64f3e6c9d6319eaabef4&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+  <div class="map-box">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3ee2a5105fa25d6e0601cf8a4eea8c6309478b09286c64f3e6c9d6319eaabef4&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+  </div>
 </main>
 
 

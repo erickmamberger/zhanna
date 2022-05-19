@@ -17,6 +17,9 @@ class Tickets(models.Model):
         self.str_date = self.time.strftime('%m-%d %H:%M')
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.str_date
+
     class Meta:
         verbose_name = 'Окно для записи'
         verbose_name_plural = 'Окна для записи'
