@@ -1,4 +1,7 @@
-{% load static %}
+.list-1 {
+    margin-top: 50%!important;
+}
+
 .nav-item{
  margin-top: 8px;
 }

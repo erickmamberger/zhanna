@@ -7,9 +7,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
     <!-- Bootstrap core CSS -->
-
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/my.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
 
     <style>
@@ -51,7 +50,7 @@
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/perm.JPG' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
 
           <div class="container">
-            <div class="carousel-caption">
+            <div style="margin-bottom: 40px;" class="carousel-caption">
               <h1>25 лет успешной адвокатской практики</h1>
               <br>
               <br>
@@ -74,7 +73,7 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
 
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption text-start" style="margin-top: 200%;">
             <h1>ГРАЖДАНСКОЕ ПРАВО</h1>
             <p><h4>Наследство<br>Раздел имущества супругов<br>Взыскание долгов и многое другое</h4></p>
             <p><a class="btn btn-lg btn-primary" href="{% url 'get_ticket' %}">Консультация</a></p>
@@ -148,12 +147,12 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">О себе:{% comment %}<span class="text-muted">It’ll blow your mind.</span>{% endcomment %}</h2><br>
-        <p class="lead">1996 год — закончила Пермский Государственный Университет, специальность — юриспруденция.<br>
+        <p class="lead"><b>1996 год — закончила Пермский Государственный Университет, специальность — юриспруденция.<br>
           1997 год — присвоен статус адвоката и внесена запись в реестр адвокатов Пермского края<br>2009
         год — высшие курсы повышения квалификации адвокатов Российской Федерации при Российской академии адвокатуры
           <br>2019 год — курсы повышения квалификации адвокатов
         при Адвокатской палате Пермского края<br>2021 год — грамота за высокие показатели в защите законных прав
-        и интересов граждан</p>
+        и интересов граждан</b></p>
       </div>
       <div class="col-md-5" style="margin-top: 35px;">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/best.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
@@ -163,16 +162,30 @@
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">{% comment %}<span class="text-muted">See for yourself.</span>{% endcomment %}</h2>
-        <p class="lead">● Разовые поручения - составление заявлений, договоров, жалоб, участие в переговорах итд.<br>
+      <div class="col-md-7 order-md-2" style="margin-bottom: 5%; margin-top: 3%;">
+        <ul>
+          <li>
+            <p class="lead"><b>Разовые поручения - составление заявлений, договоров, жалоб, участие в переговорах итд.</b></p>
+          </li>
+          <li>
+            <p class="lead"><b>Соглашение на ведение дела:</b></p>
+            <ul>
+              <li><p class="lead"><b>Анализ ситуации</b></p></li>
+              <li><p class="lead"><b>Сбор доказательств</b></p></li>
+              <li><p class="lead"><b>Выработка правовой позиции</b></p></li>
+              <li><p class="lead"><b>Представление интересов в суде</b></p></li>
+            </ul>
+          </li>
+          <li><p class="lead"><b>Абонентское обслуживание - юридическое сопровождение деятельности предприятия, как альтернатива штатному юристу</b></p></li>
+        </ul>
+        <!--<p class="lead">● Разовые поручения - составление заявлений, договоров, жалоб, участие в переговорах итд.<br>
         ● Соглашение на ведение дела:<br>
         • Анализ ситуации<br>
         • Сбор доказательств<br>
         • Выработка правовой позиции<br>
         • Представление интересов в суде<br>
         ● Абонентское обслуживание - юридическое сопровождение деятельности предприятия, как альтернатива штатному юристу</p>
-      </div>
+   --></div>
       <div class="col-md-5 order-md-1">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/near_sud.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
       </div>
@@ -181,11 +194,20 @@
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">{% comment %}<span class="text-muted">Checkmate.</span>{% endcomment %}</h2>
-        <p class="lead">● Возможность провидения онлайн-консультаций<br>
-        ● Различные варианты сотрудничества<br>
-        ● Высокий уровень профессионализм</p>
+      <div class="col-md-7" style="margin-top: 14%;">
+        <div class="list-1">
+          <ul>
+            <li>
+              <p class="lead"><b>Возможность провидения онлайн-консультаций</b></p>
+            </li>
+            <li>
+              <p class="lead"><b>Различные варианты сотрудничества</b></p>
+            </li>
+            <li>
+              <p class="lead"><b>Высокий уровень профессионализм</b></p>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
@@ -199,14 +221,12 @@
   </div><!-- /.container -->
     <!-- FOOTER -->
   <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
+    <p class="float-end"><a href="#"><b>Наверх</b></a></p>
     <p>Стоимость услуг может меняться. По вопросам обращайтесь лично к адвокату.{% comment %} &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>{% endcomment %}</p>
   </footer>
 </main>
 
-
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-
       
   </body>
 </html>
