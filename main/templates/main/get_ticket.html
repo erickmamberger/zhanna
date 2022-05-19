@@ -37,10 +37,10 @@
 <body>
   <br>
   <br>
+  {% if tickets %}
   <blockquote class="blockquote text-center">
-    <p class="mb-0"><h5>Запись на консультацию</h5></p>
+    <p class="mb-0"><h3>Запись на консультацию</h3></p>
   </blockquote>
-    {% if tickets %}
     <form method="post">
     <div class="d-grid gap-2 col-6 mx-auto">
         {% csrf_token %}
@@ -69,9 +69,12 @@
     </form>
     {% else %}
     <blockquote class="blockquote text-center">
-    <p class="mb-0"><h5>Автоматизированая запись недоступна позвоните нам +7 (902) 471-71-34</h5></p>
+    <p class="mb-0" style="margin-top: 10%;"><h5>Автоматическая запись недоступна, позвоните нам на номер <br><br>+7 (902) 471-71-34<br>
+    <br>Мы подберем время для вас</h5></p>
   </blockquote>
     {% endif %}
+
+{% include 'main/footer.html' %}
 
 </body>
 </html>

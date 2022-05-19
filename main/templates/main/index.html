@@ -124,7 +124,7 @@
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/with_client.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
 
-        <h3 style="margin-top: 20px;">Отвественности и индивидульный подход</h3>
+        <h3 style="margin-top: 20px;">Отвественность и индивидульный подход</h3>
         <!--<p>От 10000 рублей.</p>-->
         {% comment %}
         <!--<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>-->
@@ -159,16 +159,18 @@
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" style="margin-bottom: 0;">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2" style="margin-bottom: 5%; margin-top: 3%;">
-        <ul>
+
+      <div class="col-md-7 order-md-2" style="">
+        <h2 class="featurette-heading" style="margin-left: 2%;">Виды сотрудничества</h2>
+        <ul style="margin-bottom: 5%; margin-top: 3%;">
           <li>
-            <p class="lead"><b>Разовые поручения - составление заявлений, договоров, жалоб, участие в переговорах итд.</b></p>
+            <p class="lead"><strong><b>Разовые поручения</b></strong><b> - составление заявлений, договоров, жалоб, участие в переговорах итд.</b></p>
           </li>
           <li>
-            <p class="lead"><b>Соглашение на ведение дела:</b></p>
+            <p class="lead"><strong><b>Соглашение на ведение дела:</b></strong></p>
             <ul>
               <li><p class="lead"><b>Анализ ситуации</b></p></li>
               <li><p class="lead"><b>Сбор доказательств</b></p></li>
@@ -176,7 +178,7 @@
               <li><p class="lead"><b>Представление интересов в суде</b></p></li>
             </ul>
           </li>
-          <li><p class="lead"><b>Абонентское обслуживание - юридическое сопровождение деятельности предприятия, как альтернатива штатному юристу</b></p></li>
+          <li><p class="lead"><strong><b>Абонентское обслуживание</b></strong><b> - юридическое сопровождение деятельности предприятия, как альтернатива штатному юристу</b></p></li>
         </ul>
         <!--<p class="lead">● Разовые поручения - составление заявлений, договоров, жалоб, участие в переговорах итд.<br>
         ● Соглашение на ведение дела:<br>
@@ -186,16 +188,18 @@
         • Представление интересов в суде<br>
         ● Абонентское обслуживание - юридическое сопровождение деятельности предприятия, как альтернатива штатному юристу</p>
    --></div>
-      <div class="col-md-5 order-md-1">
+      <div class="col-md-5 order-md-1" style="margin-top: 10%;">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/near_sud.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" style="margin-bottom: 0;">
 
     <div class="row featurette">
-      <div class="col-md-7" style="margin-top: 14%;">
-        <div class="list-1">
+
+      <div class="col-md-7" style="margin-top: 2%;">
+        <h2 class="featurette-heading" style="margin-left: 2%; margin-top: 20%;">Преимущества</h2>
+        <div class="list-1" style="margin-top: 7%;">
           <ul>
             <li>
               <p class="lead"><b>Возможность провидения онлайн-консультаций</b></p>
@@ -209,21 +213,17 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-5" style="margin-top: 10%;">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image xlink:href="{% static 'img/2_1.jpg' %}" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></image></svg>
       </div>
     </div>
 
-    <hr class="featurette-divider">
+
 
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
-    <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#"><b>Наверх</b></a></p>
-    <p>Стоимость услуг может меняться. По вопросам обращайтесь лично к адвокату.{% comment %} &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>{% endcomment %}</p>
-  </footer>
+  {% include 'main/footer.html' %}
 </main>
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>

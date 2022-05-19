@@ -14,7 +14,7 @@ class Tickets(models.Model):
     str_date = models.CharField(max_length=50, db_index=True, blank=True)
 
     def save(self, *args, **kwargs):
-        self.str_date = self.time.strftime('%m-%d %H:%M')
+        self.str_date = self.time.strftime('%d-%m-%Y %H:%M')
         super().save(*args, **kwargs)
 
     def __str__(self):
